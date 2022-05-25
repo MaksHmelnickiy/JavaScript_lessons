@@ -6,6 +6,10 @@ let arr =['d','d','2']
 console.log(Array.isArray(a)) // вернет false так как это строка
 console.log(Array.isArray(arr)); // вернет true так как это массив
 
+arr.forEach(function(item, i , arre){
+    console.log(`${item} + ${i} + ${arre}`)
+    return item = '2'
+})
 
 //thisArg  Значение параметра thisArg становится this для func.
 //Почти все методы массива, которые вызывают функции – такие как find, filter, map, 
