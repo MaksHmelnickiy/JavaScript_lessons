@@ -6,5 +6,7 @@
 
 let arr = ["t", "e", "s", "t"];
 
-document.write(`<b>Slice</b></br> <b>Before</b>:${arr} </br>arr.slice(0,2) </br> <b>After</b>: ${arr.slice(0,2)}`)
+document.write(`<b>Slice</b></br> <b>Before</b>:${arr} </br>arr.slice(0,2) </br> <b>After</b>: ${arr.slice(0,2)}`);
+let a = arr.slice(1,2);
+console.log(a)
 //Можно вызвать slice и вообще без аргументов: arr.slice() создаёт копию массива arr. 

@@ -6,11 +6,12 @@ let prod2 = {
     name: 'Amd',
     price: 50,
     getPrice(currency = '$') { 
-        console.log('getPrice', currency + this.price)
+        console.log('getPrice', currency + this.name +  this.price)
     }
 }
+
 let getBind = prod2.getPrice.bind(prod2) 
 
-setTimeout(getBind, 1000) // result: getPrice $undefined 
+setTimeout(getBind, 1000) // result: getPrice $undefined // ПРОИЗОШЛА ПОТЕРЯ КОНТЕКСТА
 // что бы решить эту проблему нужно использовать либо обёртку  setTimeout(function(){prod2.getPrice()},1000) либо метод bind() строка 13
 // Это сработает если в переменную prod2.getPrice

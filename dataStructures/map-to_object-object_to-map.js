@@ -10,6 +10,7 @@ console.log( map ); // str1
 
 let obj = {
     name: "John",
+
     age: 30
 };
 

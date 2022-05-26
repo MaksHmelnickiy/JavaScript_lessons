@@ -4,7 +4,7 @@
 let names = 'Вася Петя Маша';
 
 let arrSplit = names.split(' ');
-
+console.log(arrSplit)
 for (let name of arrSplit) {
   console.log( 'split',`Method1: Сообщение получат: ${name}.` ); // Сообщение получат: Вася (и другие имена)
 }
@@ -20,6 +20,6 @@ arrSplit.forEach(element => {
 
 let arrJoin = ['Вася', 'Петя', 'Маша'];
 
-let str = arrJoin.join(';'); // объединить массив в строку через ;
+let str = arrJoin.join('; '); // объединить массив в строку через ;
 
 console.log('join', str ); // Вася;Петя;Маша
