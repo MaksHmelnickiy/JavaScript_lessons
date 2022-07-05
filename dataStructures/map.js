@@ -21,7 +21,7 @@ map.set(true, "bool1");  // булево значение как ключ
 console.log('map', map)
 console.log(map.get(1)); // "num1"
 console.log(map.get("1")); // "str1"
-console.log(map.has("1"))
+console.log(map.has("1"));
 console.log(map.size); // 3 
 
 //Map может использовать объекты в качестве ключей.
