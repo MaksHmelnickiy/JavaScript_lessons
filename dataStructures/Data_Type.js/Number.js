@@ -63,4 +63,18 @@ console.log('Math.max', Math.max(3, 5, -10, 0, 1) ); // 5
 console.log('Math.min', Math.min(3,7,2)) // 2
 
 // ⁡⁢⁣⁣Math.pow(n, power)⁡ Возвращает число ⁡⁢⁣⁣n⁡, возведённое в степень ⁡⁢⁣⁣power⁡
-console.log('Math.pow', Math.pow(2, 3)) // 8 / Как двойка в третьей степени или ⁡⁢⁣⁢(2*2*2)⁡
+console.log('Math.pow', Math.pow(2, 3)) // 8 / Как двойка в третьей степени или ⁡⁢⁣⁢(2*2*2)
+
+// ⁡⁣⁣⁢Задачи⁡ ..
+console.log('Задачи')
+
+let calc = {
+    result: 0,
+    plus(){
+      let a = +prompt() // ⁡⁣⁣⁢+⁡ унарный оператор который переводит строку в число
+      let b = +prompt() // ⁡⁣⁣⁢+⁡ унарный оператор который переводит строку в число
+      return this.result = a + b
+    }
+}
+calc.plus()
+console.log('Задача1', calc.result)
