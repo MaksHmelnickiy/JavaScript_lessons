@@ -10,9 +10,6 @@ let fruitsPop = ["Яблоко", "Апельсин", "Слива"];
 document.write('pop: ' + ` <b>${fruitsPop.pop()} //</b> after: ${fruitsPop} </br> </br>` )
 
 
-
-
-
 let fruitsPush = ["Яблоко", "Апельсин", "Слива"];
 
 document.write('push: ' + ` <b>${fruitsPush.push('Мандарин')} //</b> after: ${fruitsPush} </br> </br>` );
