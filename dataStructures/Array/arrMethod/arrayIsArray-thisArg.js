@@ -14,6 +14,6 @@ arr.forEach(function(item, i , arre){
 //⁡⁢⁣⁣thisArg⁡  Значение параметра ⁡⁢⁣⁣thisArg⁡ становится ⁡⁣⁣⁢this⁡ для ⁡⁣⁣⁢func⁡.
 //Почти все методы массива, которые вызывают функции – такие как ⁡⁣⁣⁢find, filter, map⁡, 
 //за исключением метода ⁡⁣⁣⁢sort⁡, принимают необязательный параметр ⁡⁢⁣⁣thisArg⁡.
-// arr.find(func, thisArg);
-// arr.filter(func, thisArg);
-// arr.map(func, thisArg);
+// ⁡⁢⁣⁣arr.find(func, thisArg)⁡;
+// ⁡⁢⁣⁣arr.filter(func, thisArg)⁡;
+// ⁡⁢⁣⁣arr.map(func, thisArg)⁡;
