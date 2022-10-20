@@ -24,3 +24,11 @@
   for (let entry of recipeMap) { // то же самое, что и recipeMap.entries()
     console.log(entry); // огурец,500 (и так далее)
   }
+
+
+  // Кроме этого, ⁡⁢⁣⁣Map⁡ имеет встроенный метод ⁡⁢⁣⁣forEach⁡, схожий со встроенным методом массивов ⁡⁣⁣⁢Array⁡:
+  // ⁡⁣⁣⁢выполняем функцию для каждой пары⁡ (⁡⁣⁢⁣ключ, значение⁡)
+  recipeMap.forEach((value, key, map) => {
+    console.log(`${key}: ${value}`); // огурец: 500 и так далее
+  });
+

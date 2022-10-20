@@ -78,7 +78,7 @@ let userFor = {
     }
   }
 
- let assignResult = Object.assign({}, assign1, assign2); // assign1.name будет перезаписан и заменен на assign2.name
+ let assignResult = Object.assign({}, assign1, assign2);// ⁡⁣⁣⁢assign1.name⁡ будет ⁡⁢⁣⁣​‌‍‌​‌‍‌перезаписан и⁡ ⁡⁢⁣⁣заменен​⁡ на ⁡⁣⁣⁢assign2.name⁡/
 
 
  console.log('assign', assignResult);
@@ -90,64 +90,8 @@ if(v === m){
   console.log('compare', true)
 }
 else {
-  console.log('compare', false) // Будет false так как у них разные ссылки , а если мы сделаем let m = v ; Тогда будет true ; так как m копирует ссылку.
+  console.log('compare', false) // Будет false так как у них разные ссылки , а если мы сделаем let m = v ; 
+                                // Тогда будет true ; так как m копирует ссылку.
 }
 
 document.write('<b>Задачи</b>')
-// Задача 1
-let doc = {};
-doc.name = 'John';
-console.log('test_1',doc);
-doc.surname = 'Smith';
-doc.name = 'Peat';
-console.log('test_1', doc);
-delete doc.name
-console.log('test_1', doc);
-
-// Задача 2
-// Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
-let shedule = {}
-function isEmpty (obj) {
-  for(key in obj) { // Для перебора всех ключей объекта используется цикл for..in или еесли нужно получить значение то obj[key].
-    return false
-  }
-  return true
-}
-console.log('Test_2', isEmpty(shedule))
-
-// Задача 3 
-// Напишите код для суммирования всех зарплат и сохраните результат в переменной sum.
-
-let salaries = {
-  John: 100,
-  Mary: 160,
-  Pete: 130,
-}
-let sum = 0;
-function result(sumAll) {
-  for (key in sumAll){
-    sum+=sumAll[key]
-  }
-  return 0
-}
-result(salaries)
-console.log(sum)
-
-// Задача 4 
-// Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
-
-let menu = {
-  width: 200,
-  height: 400,
-  title: 'Title',
-}
-
-function multiple(event) {
-  for(key in event){
-    if(typeof event[key] === "number"){
-      menu[key] = event[key] * 2;
-    }
-  }
-}
-multiple(menu)
-console.log('test4', menu)
