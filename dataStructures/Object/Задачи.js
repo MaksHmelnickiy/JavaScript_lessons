@@ -85,3 +85,43 @@ function count(obj){
     return Object.entries(obj).length
 }
 console.log('Task N6: ', count(person))
+
+
+// ​‌‍‌⁡⁣⁣⁢Задачи по диструктуризации ⁡⁢⁣⁣функций объектов и массивов⁡​ /
+
+// ⁡⁣⁣⁢Задача 7⁡ /
+// Напишите деструктурирующее присваивание, которое:
+// свойство name присвоит в переменную name.
+// свойство years присвоит в переменную age.
+// свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
+let user = {
+  names: "John",
+  years: 30
+};
+
+let {names, years: age, isAdmin = undefined} = user // для ⁡⁢⁣⁣years⁡ мы пресвоили новую переменную ⁡⁢⁣⁣age⁡ / 
+console.log('Task N7: ', names, age, isAdmin)
+
+// ⁡⁣⁣⁢Задача 8⁡ /
+// Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.
+
+let salaries2 = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(item) {
+  let arr = Object.entries(item)
+  let a = 0;
+  let b = null;
+  for(let [part, part2] of arr ){  // Поиск найбольшего числа.
+    if( a < part2){
+      a = part2;
+      b = part;
+    }
+  }
+  return b
+}
+
+console.log('Task N8: ', topSalary(salaries2))
