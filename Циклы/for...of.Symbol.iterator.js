@@ -42,7 +42,7 @@ let range = {
         }
       }
     };
-  };
+  }; 
   
   // теперь работает!
   for (let num of range) {
