@@ -30,3 +30,8 @@ let surname3 = arr[1];
 // …На самом деле мы можем использовать любой перебираемый объект, не только массивы:
 let [a, b, c] = "abc";
 let [one, two, three] = new Set([1, 2, 3]);
+
+// Также можно использовать для остальных элементов массива ​‌‍‌⁡⁢⁣⁣оператор расширения ...arr⁡​.
+let arrFull=['maks', 'faks', 'taks', 'jaks']
+let [var1,var2, ...arrSpread] = arrFull; // в ⁡⁢⁣⁣...arrSpread⁡ кладем остальные элементы ⁡⁣⁢⁣'taks' 'jaks'⁡ /
+console.log('var1', arrSpread) // (2) ['taks', 'jaks'] /

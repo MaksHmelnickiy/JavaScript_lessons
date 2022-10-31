@@ -29,6 +29,7 @@ console.log('Task N2: ', factorial(5)) // 720
 
 // ⁡⁣⁣⁢Задача 3⁡ /
 // Напишите функцию printList(list), которая выводит элементы списка по одному.
+// Variant 1
 let list = {
     value: 1,
     next: {
@@ -44,7 +45,19 @@ let list = {
 };
 
 function printList(el){
-
+  let item = el;
+  for(;item !== null; item){
+    console.log('Task N3: ', item.value)
+    item = item.next
+  }
 }
+printList(list)
 
-console.log()
+// Variant 2
+function printList2(el){
+  console.log(el.value);
+  if(!!el.next === true){  // ​‌‍‌⁡⁢⁣⁢!!⁡ -​ ⁡⁢⁣⁣Преобразовывает выражение в логическое значение⁡ / 
+    printList2(el.next)
+  }
+}
+printList2(list)
