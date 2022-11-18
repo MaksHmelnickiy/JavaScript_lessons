@@ -55,7 +55,7 @@ printList(list)
 
 // Variant 2
 function printList2(el){
-  console.log(el.value);
+  console.log('Task N3: ',el.value);
   if(!!el.next === true){  // ​‌‍‌⁡⁢⁣⁢!!⁡ -​ ⁡⁢⁣⁣Преобразовывает выражение в логическое значение⁡ / 
     printList2(el.next)
   }

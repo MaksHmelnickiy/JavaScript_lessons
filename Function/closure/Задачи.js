@@ -68,3 +68,54 @@ function makeArmy() {
   console.log(army)
   army[0](); // 0
   army[5](); // 5
+
+// ​‌‍‌⁡⁣⁣⁢NFE​ ⁡/
+
+// ⁡⁣⁣⁢Задача N4⁡ /
+// Измените код makeCounter() так, чтобы счётчик мог уменьшать и устанавливать значение:
+// counter() должен возвращать следующее значение (как и раньше).
+// counter.set(value) должен устанавливать счётчику значение value.
+// counter.decrease() должен уменьшать значение счётчика на 1.
+
+function makeCounter() {
+    let count = 0
+    function counter(){
+      return count++
+    }
+  
+    counter.set = function(val){
+      return count = val
+    }
+  
+    counter.decrease = function() {
+      return count -= 1
+    }
+  
+    return counter
+  }
+  
+  let counter = makeCounter()
+  console.log('Task N4: counter plus: ', counter())
+  console.log('Task N4: counter plus: ', counter())
+  console.log('Task N4: counter set:', counter.set(11))
+  console.log('Task N4: counter minus:', counter.decrease())
+  
+  // ⁡⁣⁣⁢Задача N5 /
+  
+  function plus(a) {
+    let c = a
+    function rest(b){
+      c+=b
+      return rest
+    }
+    rest.toString = function() {
+      return c;
+    };
+    return rest
+  }
+  // ⁡⁣⁢⁣1⁡. В общем, чтобы это хоть как-нибудь заработало, результат, возвращаемый sum, должен быть функцией.
+  // ⁡⁣⁢⁣2⁡. Между вызовами эта функция должна удерживать в памяти текущее значение счётчика.
+  // ⁡⁣⁢⁣3⁡. Согласно заданию, функция должна преобразовываться в число, когда она используется с оператором ==. 
+  // Функции – объекты, так что преобразование происходит, как описано в главе Преобразование объектов в примитивы, 
+  // поэтому можно создать наш собственный метод, возвращающий число.
+  alert(plus(5)(4)(11))
