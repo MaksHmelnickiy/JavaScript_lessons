@@ -1,5 +1,5 @@
-// При использовании функций call и apply можно задать значение this напрямую, передав его первым параметром.
-// Вызов func.call(context, a, b...) – то же, что обычный вызов func(a, b...), но с явно указанным this(=context).
+// При использовании функций ⁡⁢⁣⁣call⁡ и ⁡⁢⁣⁣apply⁡ можно задать значение ⁡⁢⁣⁡⁣⁢⁣this⁡⁡ напрямую, передав его первым параметром.
+// Вызов ⁡⁢⁣⁣func.call(context, a, b...)⁡ – то же, что обычный вызов ⁡⁣⁣⁢func(a, b...)⁡, но с явно указанным ⁡⁢⁣⁣this(=context)⁡.
 
 function getPrice(currency = '$', cur = 2) { // функция  принимает в себее параметры currency , cur 
     console.log('getPrice', currency + this.price + cur)
