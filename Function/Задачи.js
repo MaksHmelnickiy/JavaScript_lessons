@@ -61,3 +61,45 @@ function printList2(el){
   }
 }
 printList2(list)
+
+// ⁡⁣⁣⁢​‌‍‌Context , call , apply, Decorators​⁡ /
+// ⁡⁣⁣⁢задача 4⁡ /
+// Создайте декоратор spy(func), который должен возвращать обёртку, 
+// которая сохраняет все вызовы функции в своём свойстве calls.
+// Каждый вызов должен сохраняться как массив аргументов.
+function work(a, b) {
+  console.log('Task 4:',  a + b ); // произвольная функция или метод
+}
+function spy(func) {
+  function wrap(...args){
+    wrap.calls.push(args) 
+    return func.apply(this, args)
+  }
+  wrap.calls = []
+  return wrap
+}
+work = spy(work);
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (let args of work.calls) {
+  console.log( 'Task 4:' + args.join() ); // "call:1,2", "call:4,5"
+}
+
+// ⁡⁣⁣⁢задача 5⁡ /
+// Создайте декоратор delay(f, ms), который задерживает каждый вызов f на ms миллисекунд. Например:
+
+function f(x) {
+  console.log('Task 5:', x);
+}
+function delay (func, a){
+  return function(...rest){setTimeout(() => func.call(this, rest), a)}
+}
+// создаём обёртки
+delay(f,1000)('sota')
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+
+f1000("test", 'sets', 'ket'); // показывает "test" после 1000 мс
+f1500("test"); // показывает "test" после 1500 мс

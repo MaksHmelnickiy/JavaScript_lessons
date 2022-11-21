@@ -15,3 +15,17 @@ let getBind = prod2.getPrice.bind(prod2)
 setTimeout(getBind, 1000) // result: getPrice $undefined // ПРОИЗОШЛА ПОТЕРЯ КОНТЕКСТА
 // что бы решить эту проблему нужно использовать либо обёртку  setTimeout(function(){prod2.getPrice()},1000) либо метод bind() строка 13
 // Это сработает если в переменную prod2.getPrice
+
+// ⁡⁣⁣⁢​‌‍‌Потеря⁡ «⁡⁢⁣⁣this⁡»​ /
+
+
+let user = {
+    firstName: "Вася",
+    sayHi() {
+      console.log(`Привет, ${this.firstName}!`);
+    }
+  };
+  
+  setTimeout(user.sayHi, 1000); // Привет, undefined! // ⁡⁢⁣⁢this утерян⁡, чтобы не утерять нужно использовать ⁡⁢⁣⁣bind⁡ /
+  let forBind = user.sayHi.bind(user)
+  setTimeout(forBind, 500)
