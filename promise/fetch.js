@@ -1,27 +1,53 @@
 // ⁡⁣⁣⁢Метод fetch — это XMLHttpRequest нового поколения. ⁡
 // Он предоставляет улучшенный интерфейс для осуществления запросов к серверу: как по части возможностей 
 // и контроля над происходящим, 
-// так и по синтаксису, так как построен на промисах.
+// так и по синтаксису, так как построен на ⁡⁢⁣⁣промисах⁡.
 
-//Типичный запрос с помощью fetch состоит из двух операторов await:
-// let response = await fetch(url, options); // завершается с заголовками ответа
-// let result = await response.json(); // читать тело ответа в формате JSON
-
-//Или, без await:
-// fetch(url, options)
-// .then(response => response.json())
-
-let fet = fetch('./test.json')
+let fetch_Req = fetch('./userTest.json')  // ⁡⁢⁣⁣.then⁡ в коде ниже выполняется, когда удалённый сервер ⁡⁣⁣⁢отвечает⁡ /
 .then(function(response){
-    return response.text()
+    // ⁡⁢⁣⁣response.text()⁡ возвращает ⁡⁣⁣⁢новый промис⁡,
+    // который выполняется и возвращает полный ответ сервера,
+    // когда он загрузится
+    return response.json()
 })
 .then(function(text){
-    return console.log(text)
+    // ...и здесь ⁡⁢⁣⁣содержимое⁡ полученного файла / 
+    return console.log(JSON.stringify(text))
 })
-console.log(fet)
+console.log('result', fetch_Req) // 
+
+
+// ​‌‌‍Давайте попробуем с ⁡⁢⁣⁣гитхаба получить⁡ юзера которого мы записали в ⁡⁣⁣⁢userTest⁡.json​⁡ /
+
+let fetch_user = fetch('./userTest.json')
+.then(responce => responce.json())
+.then(function (user) {
+    // Ниже ⁡⁣⁣⁢получаем юзера из гитхаба⁡ из нашего запроса.
+    return fetch(`https://api.github.com/users/${user.name}`)
+})
+.then(
+    // Ниже ⁡⁣⁣⁢Загружаем ответ⁡ в формате json .
+    getUser => getUser.json()
+)
+.then(function (user) {
+    // Выводим полученную информацию о юзере , а именно его аватар;
+    let img = document.createElement('img')
+    img.setAttribute('src', user.avatar_url)
+    document.body.append(img)
+    function whereThis() {
+        console.log(this.img)
+    }
+
+    return whereThis() // ⁡⁢⁣⁣Возвращаем user⁡ , что бы продолжить цепочку ⁡⁢⁣⁣.then()⁡ / 
+})
+// .then(a => console.log(a))
+
+// ​‌‌‍Как ⁡⁢⁣⁢правило⁡, ⁡⁢⁣⁡⁣⁣⁢все асинхронные действия должны возвращать ⁡⁢⁣⁣промис​⁡⁡.
+
+
 // Параметры ответа:
 
-// ⁡⁢⁣⁣response.status⁡ – HTTP-код ответа,
+// ⁡⁢⁣⁣response.status⁡ – HTTP-код ответа,§§§§
 // ⁡⁢⁣⁣response.ok⁡ – true, если статус ответа в диапазоне 200-299.
 // ⁡⁢⁣⁣response.headers⁡ – похожий на Map объект с HTTP-заголовками.
 // Методы для получения тела ответа:
