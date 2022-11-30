@@ -21,7 +21,7 @@ const promise1 = new Promise((resolve, reject) => { // ⁡⁣⁣⁡⁢⁣⁣reso
 
 const promise2 = new Promise((resolve, reject) => { // ⁡⁣⁣⁡⁢⁣⁢reject⁡⁡ - выполнен с ошибкой
     setTimeout(() => {
-      reject('Error:');
+      reject('Error: myErr');
     }, 300);
   });
   
@@ -56,5 +56,21 @@ let promiseError = new Promise(function(resolve, reject) {
 
 // Исполнитель должен вызвать что-то одно:⁡⁢⁣⁣ resolve⁡ или ⁡⁢⁣⁢reject⁡. Состояние промиса может быть изменено только ⁡⁣⁣⁢один раз⁡.
 // Все ⁡⁣⁣⁢последующие вызовы⁡ ⁡⁢⁣⁣resolve⁡ и ⁡⁢⁣⁢reject⁡ будут ⁡⁣⁣⁡⁢⁣⁢проигнорированы⁡⁡:
+
+// ​‌‍‌⁡⁣⁣⁢then(responce,reject)⁡​ вызывается так :
+let variantPromise = 0 // 0 - error ; 1 - complited /
+new Promise(function(resolve,reject){
+  if(variantPromise === 0){
+    reject(new Error('error on second argument'))
+  }
+  else if (variantPromise === 1) {
+    resolve('Complited!')
+  }
+})
+.finally(console.log('finaly')) // ​‌‍‌⁡⁢⁣⁣finally⁡​ пропускает ⁡⁢⁣⁢reject⁡ или ⁡⁣⁣⁢resolve⁡. Сюда можно вписывать левые функции /
+.then(
+  resultResolve => console.log('result:', resultResolve), // если ⁡⁢⁣⁣успешно⁡ то обрабатываем ⁡⁣⁢⁣resolve⁡ /
+  error => console.log('my test error', error) // если⁡⁢⁣⁢ ошибка⁡ то обрабатываем ⁡⁣⁢⁣reject⁡ / 
+)
 
 
