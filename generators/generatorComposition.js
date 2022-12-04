@@ -1,26 +1,24 @@
-// Композиция генераторов – это особенная возможность генераторов, которая позволяет прозрачно «встраивать» генераторы друг в друга.
+// ⁡⁢⁣⁣Композиция генераторов⁡ – это особенная возможность генераторов, которая позволяет ⁡⁣⁣⁢прозрачно «встраивать» генераторы друг в друга⁡.
+// Для генераторов есть особый синтаксис ⁡⁢⁣⁣yield*⁡, который позволяет ⁡⁣⁣⁢«вкладывать» генераторы один в другой⁡ (осуществлять их композицию).
 
+// Вот генератор с композицией:
 function* generateSequence(start, end) {
-    for (let i = start; i <= end; i++) yield i;
-  }
-  
-  function* generatePasswordCodes() {
-  
-    // 0..9
-    yield* generateSequence(48, 57);  // используется генератор на строке 3 и результат будет 48,49,50 и т.д.
-  
-    // A..Z
-    yield* generateSequence(65, 90);
-  
-    // a..z
-    yield* generateSequence(97, 122);
-  
-  }
-  
-  let str = '';
-  
-  for(let code of generatePasswordCodes()) {
-    str += String.fromCharCode(code);
-  }
-  
-  console.log(str); // 0..9A..Za..z
+  for (let i = start; i <= end; i++) yield i;
+}
+
+function* generatePasswordCodes() {
+
+  yield* generateSequence(1, 57);
+
+  yield* generateSequence(65, 90);
+
+  yield* generateSequence(97, 122);
+
+}
+// Директива ⁡⁢⁣⁣yield*⁡ ⁡⁣⁣⁢делегирует выполнение другому генератору ⁡⁣⁢⁣generateSequence()⁡⁡. Этот термин означает, 
+// что ⁡⁢⁣⁣yield*⁡ ⁡⁣⁢⁣generateSequence()⁡ перебирает генератор ⁡⁣⁢⁣generateSequence()⁡ и прозрачно направляет его вывод наружу.
+// Как если бы значения были сгенерированы ⁡⁣⁣⁢внешним генератором⁡.
+
+for(let item of generatePasswordCodes()){
+  console.log(item)
+}
