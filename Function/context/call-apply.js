@@ -48,7 +48,6 @@ function getData(name, email, phone){
 let data = {
     name: 'Stepan'
 }
-getData.call(data, '3809711...', 'te@gmail.com')
-
+getData.call(data, '3809711...', 'te@gmail.com') // Stepan, tel: undefined, email: undefined
 
 

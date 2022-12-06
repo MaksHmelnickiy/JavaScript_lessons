@@ -9,7 +9,7 @@
 let options5 = {
     title: "My menu",
     items: ["Item1", "Item2"]
-  };
+};
   
   // ...и она немедленно извлекает свойства в переменные
   function showMenu({title = "Untitled", width = 200, height = 100, items = []}) {

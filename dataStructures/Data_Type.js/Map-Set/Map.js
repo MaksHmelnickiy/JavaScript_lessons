@@ -29,3 +29,12 @@ console.log(map.size); // 3
 // Это то что ⁡⁣⁢⁣невозможно⁡ для ⁡⁢⁣⁣Object⁡.
 
 // ⁡⁢⁣⁣NaN⁡ считается ⁡⁣⁢⁣равным⁡ ⁡⁢⁣⁣NaN⁡. Так что ⁡⁢⁣⁣NaN⁡ также может ⁡⁣⁣⁢использоваться в качестве ключа⁡.
+let objKey = 'key'
+let a ={
+    objKey: 'maks'
+}
+console.log(a) // objKey: 'maks' // Вернет свой ключ а не внешний
+
+let mapObj = new Map();
+mapObj.set(objKey, 'set')
+console.log(mapObj) // 'key' => 'set' вернет внешний ключ

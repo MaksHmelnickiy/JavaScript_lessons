@@ -84,6 +84,14 @@ let userFor = {
 
  console.log('assign', assignResult);
 
+ let mainObj = {
+  name: 'Serg',
+  age: 12
+ }
+
+ let copyObj = Object.assign({}, mainObj);
+ console.log('assign test', mainObj === copyObj) // false 
+
 let v = {name: 'MAks'};
 let m = {name: 'MAks'};
 

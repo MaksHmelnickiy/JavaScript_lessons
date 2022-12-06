@@ -19,6 +19,20 @@ Promise.all([
 // Ожидает исполнения или отклонения любого из полученных промисов.
 // Возвращает промис, который будет исполнен или отклонён с результатом исполнения первого исполненного или отклонённого промиса из .iterable.
 
+Promise.race([
+    new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("Ошибка!")), 2000)),
+    new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+  ]).then(alert); // 1
+
+// ⁡⁢⁣⁣Promise.any⁡ - Метод очень похож на Promise.race, но ждёт только первый успешно выполненный промис, из которого берёт результат.
+
+Promise.any([
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("Ошибка!")), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => resolve(1), 2000)),
+    new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+  ]).then(alert); // 1
+
 // ⁡⁢⁣⁣Promise.reject⁡(reason)
 // Возвращает промис, выполнен с ошибкой.
 

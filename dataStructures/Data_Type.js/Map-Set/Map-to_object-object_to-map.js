@@ -1,4 +1,4 @@
-// Если у нас уже есть ⁡⁣⁢⁣обычный объект⁡, и мы хотели бы создать ⁡⁢⁣⁣Map⁡ из него, то поможет встроенный метод ⁡⁢⁣⁣Object.entries(obj)⁡, 
+// Если у нас уже есть ⁡⁣⁢⁣обычный объект⁡, и мы хотели бы создать ⁡⁢⁣⁣Map⁡ из него, то поможет встроенный метод ⁡⁢⁣⁣Object.entries(obj)⁡⁡, 
 // который получает объект и ⁡⁣⁣⁢возвращает массив пар ключ-значение⁡ для него, как раз в этом формате.
 
 // массив пар ⁡⁢⁣⁣[͟к͟л͟ю͟ч, з͟н͟а͟ч͟е͟н͟и͟е͟]⁡ /
@@ -9,14 +9,15 @@ let map = new Map([
     [true, 'bool1']
   ]);
 
-console.log( map ); // str1
+let mapToObj2 = Object.fromEntries(map.entries())
+console.log(mapToObj2) // ⁡⁣⁢⁣1: 'num1', true: 'bool1'⁡ ; ⁡⁢⁣⁢Удалит⁡ первый элемент массива ⁡⁣⁣⁢'1',  'str1'⁡ / /
 
-let obj = {
+let obje = {
     name: "John",
     age: 30
 };
 
-let toMap = new Map(Object.entries(obj));  // ⁡⁢⁣⁣Object⁡ превращаем в ⁡⁢⁣⁣Map⁡. Будет так ⁡⁢⁣⁢[ ["name","John"], ["age", 30] ]⁡ /
+let toMap = new Map(Object.entries(obje));  // ⁡⁢⁣⁣Object⁡ превращаем в ⁡⁢⁣⁣Map⁡. Будет так ⁡⁢⁣⁢[ ["name","John"], ["age", 30] ]⁡ /
 
 console.log('toMap',toMap)
 

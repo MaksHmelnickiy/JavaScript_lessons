@@ -8,8 +8,10 @@
 // Мы можем ​‌‍‌⁡⁣⁣⁢перебрать⁡​ содержимое объекта ⁡⁢⁣⁣set⁡ как с помощью метода ⁡⁢⁣⁣for..of⁡, так и используя ⁡⁢⁣⁣forEach⁡:
 
 let set = new Set(["апельсин", "яблоко", "банан"]);
-
-for (let value of set.entries()) console.log(value);
+for (let value of set.entries()) {
+  a.push(value)
+  console.log(value) // ['апельсин', 'апельсин'] ['яблоко', 'яблоко'] ['банан', 'банан']
+};
 
 // то же самое с forEach:
 set.forEach((value, valueAgain, set) => {
