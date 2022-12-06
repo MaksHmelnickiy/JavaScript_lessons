@@ -29,5 +29,3 @@ let arrForEach = ["Bilbo", "Gandalf", "Nazgul"]
 arrForEach.forEach((item, index, array) => {
     console.log(`${item} имеет позицию ${index} в ${array}`);
 });
-
-
